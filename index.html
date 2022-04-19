@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="radio-buttons.css">
+<meta charset="utf-8">
+<title>MySlideshow</title>
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  /*max-width: 1000px;*/
+  max-width: 50%;
+  position: relative;
+  margin: auto;
+  border: solid red;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  /*color: white;*/
+  color: red;
+  color: red;
+font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+color: red;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  /*color: #f2f2f2;*/
+  color: red;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+.artist-name {
+  font-size: 20px;
+  color: red;
+  font-style: oblique;
+  text-align: center;
+}
+.left-panel {
+  position: fixed;
+  width: 25%;
+  height: 75%;
+  border: solid blue;
+}
+.right-panel {
+  position: fixed;
+  width: 25%;
+  height: 50%;
+  right: 0;
+  top: 0;
+  border: solid blue;
+}
+.paintings-button {
+  margin: 0;
+  position: absolute;
+  border: solid green;
+  top: 30%;
+  left: 30%;
+}
+.photographs-button {
+  margin: 0;
+  position: absolute;
+  border: solid green;
+  top: 40%;
+  left: 30%;
+}
+.collages-button {
+  margin: 0;
+  position: absolute;
+  border: solid green;
+  top: 50%;
+  left: 30%;
+}
+.portraits-button {
+  margin: 0;
+  position: absolute;
+  border: solid green;
+  top: 60%;
+  left: 30%;
+}
+.drawings-button {
+  margin: 0;
+  position: absolute;
+  border: solid green;
+  top: 70%;
+  left: 30%;
+}
+.cards-button {
+  margin: 0;
+  position: absolute;
+  border: solid green;
+  top: 80%;
+  left: 30%;
+}
+.whimsical-button {
+  margin: 0;
+  position: absolute;
+  border: solid green;
+  top: 90%;
+  left: 30%;
+}
+.installation-button {
+  margin: 0;
+  position: absolute;
+  border: solid green;
+  top: 100%;
+  left: 30%;
+}
+.manual-button {
+  margin: 0;
+  position: absolute;
+  border: solid green;
+  top: 25%;
+  left: 30%;
+}
+.automatic-button {
+  margin: 0;
+  position: absolute;
+  border: solid green;
+  top: 35%;
+  left: 30%;
+}
+.alert-button {
+  margin: 0;
+  position: absolute;
+  border: solid green;
+  top: 60%;
+  left: 30%;
+}
+
+</style>
+	</head> 
+<body>
+<div class="left-panel">
+<p id = "artist" class="artist-name" style="font-size: 40px"> Anita's Art </p>
+	<br>
+	
+<label class="container">Paintings
+  <input type="radio" checked="checked" name="radio" onclick="doPaintings()">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Photographs
+  <input type="radio" name="radio"
+  onclick="doPhotos()">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Collages
+  <input type="radio" name="radio"
+  onclick="doCollages()">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Portraits
+  <input type="radio" name="radio"
+  onclick="doPortraits()">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Drawings
+  <input type="radio" name="radio"
+  onclick="doDrawings()">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Cards
+  <input type="radio" name="radio"
+  onclick="doCards()">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Whimsical
+  <input type="radio" name="radio"
+  onclick="doWhimsical()">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Installation
+  <input type="radio" name="radio"
+  onclick="doInstallation()">
+  <span class="checkmark"></span>
+</label>
+
+</div>
+
+<div class="slideshow-container">
+	
+<div class="mySlides fade">
+  <div class="numbertext">1 / 6</div>
+  <img id="image-1" src="images/paintings/trojan-horse.jpg" style="width:100%" alt="photo is missing">
+<div class="text">1</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 6</div>
+  <img id="image-2" src="images/paintings/roswell-burro-head.jpg" style="width:100%" alt="photo is missing">
+<div class="text">2</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 6</div>
+  <img id="image-3" src="images/paintings/Plumeria-Bernashe.jpg" style="width:100%" alt="photo is missing">
+  <div class="text">3</div>
+</div>
+	
+<div class="mySlides fade">
+  <div class="numbertext">4 / 6</div>
+  <img id="image-4" src="images/paintings/plumeria-bernashe.jpg" style="width:100%" alt="photo is missing">
+  <div class="text">4</div>
+</div>
+	
+<div class="mySlides fade">
+  <div class="numbertext">5 / 6</div>
+  <img id="image-5" src="images/paintings/headstrong-horse.jpg" style="width:100%" alt="photo is missing">
+  <div class="text">5</div>
+</div>
+	
+<div id="div1" class="mySlides fade">
+  <div class="numbertext">6 / 6</div>
+  <img id="image-6" src="images/paintings/headstrong-horse.jpg" style="width:100%" alt="photo is missing">
+  <div id="childDiv" class="text">6</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<div class="right-panel">
+<p class="artist-name"  style="color: blue; font-size: 20px;" > Choose the type of slide show: </p>
+ 	<!---<div class="manual-button">
+		<button type="button" onclick="manualShow()">ManualShow</button>
+	</div>
+	<br>
+     <div class="automatic-button">
+		  <button type="button" onclick="autoShow()">Automatic</button>
+	</div> --->
+	<br>
+ <!---<div class="alert-button">
+	  <button  type="button" onclick="alert('Hello world!')">Information</button> --->
+  <label class="container">AutoShow
+  <input type="radio" checked="checked" name="manual-auto"
+  onclick="autoShow()">
+  <span class="checkmark"></span>
+  </label>
+<label class="container">ManualShow
+  <input type="radio" name="manual-auto"
+  onclick="manualShow()">
+  <span class="checkmark"></span>
+  </label>
+    <div class="alert-button">
+	  <button  type="button" onclick="test_replace()">Information</button>
+  </div>
+
+</div>
+
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+</div>
+
+<script>
+var showType = "auto";
+var slideIndex = 1;
+var number_of_images;
+	doPaintings();
+/*window.alert("before showSlides in script");*/
+showSlides(slideIndex);
+	
+function manualShow() {
+  showType = "manual";	
+}
+function autoShow() {
+  showType = "auto";
+  showSlides(1);
+}
+function plusSlides(n) {
+  if (showType == "manual"){
+  showSlides(slideIndex += n);
+  }
+}
+
+function currentSlide(n) {
+	if (showType == "manual"){
+  showSlides(slideIndex = n);
+	}
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (showType == "manual") {
+  if (n > number_of_images) {slideIndex = 1}    
+  /*if (n > slides.length) {slideIndex = 1}*/    
+  if (n < 1) {slideIndex = number_of_images}
+  /*if (n < 1) {slideIndex = slides.length}*/
+  }
+	/*if(number_of_images slides.length)*/
+	/*let images_to_show =
+	Math.min(number_of_images,slides.length);*/
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+     }
+	if (showType == "auto"){
+	slideIndex++;
+	if (slideIndex > number_of_images) {slideIndex = 1}
+	/*if (slideIndex > slides.length) {slideIndex = 1}*/
+	}
+  for (i = 0; i < slides.length; i++) {
+	  if (i < number_of_images){
+	     dots[i].style.visibility = "visible";
+	  }else{
+		 dots[i].style.visibility = "hidden"; 
+	  }
+  }
+for (i = 0; i < number_of_images; i++) {
+  /*for (i = 0; i < dots.length; i++) {*/
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+	if (showType == "auto"){
+		setTimeout(showSlides, 2000); // Change image every 2 seconds
+	}
+}
+	
+function doPaintings() {
+number_of_images = 4;
+/*slideIndex = 5;*/
+	
+document.getElementById("image-1").src = "images/paintings/trojan-horse.jpg";
+document.getElementById("image-2").src = "images/paintings/roswell-burro-head.jpg";
+document.getElementById("image-3").src = "images/paintings/plumeria-bernashe.jpg";
+document.getElementById("image-4").src = "images/paintings/headstrong-horse.jpg";
+}
+	
+function doPhotos() {
+number_of_images = 3; 
+slideIndex = 4;
+document.getElementById("image-1").src = "images/photos/amelia-sunrise-1.jpg";
+document.getElementById("image-2").src = "images/photos/green-bicycle.jpg";
+document.getElementById("image-3").src = "images/photos/orange-chair.jpg";
+document.getElementById("image-4").src = "images/photos/two-beach-chairs.jpg";
+}
+	
+function doCollages() {
+number_of_images = 2;
+document.getElementById("image-1").src = "images/collages/anita-easter-collage-2.jpg";
+document.getElementById("image-2").src = "images/collages/anita-easter-collage-3.jpg";
+}
+	
+function doPortraits() {
+number_of_images = 1;
+document.getElementById("image-1").src = "images/portraits/senior-woman-1.jpg";
+}
+	
+function doDrawings() {
+number_of_images = 6;
+document.getElementById("image-1").src = "images/drawings/cupcake-kitten-1.jpg";
+document.getElementById("image-2").src = "images/drawings/loving-couple.jpg";
+document.getElementById("image-3").src = "images/drawings/maggie-1.jpg";
+document.getElementById("image-4").src = "images/drawings/see-things-different.jpg";
+document.getElementById("image-5").src = "images/drawings/senior-woman-1.jpg";
+document.getElementById("image-6").src = "images/drawings/i-stop-at-nothing.jpg";
+}
+	
+function doCards() {
+number_of_images = 2;
+document.getElementById("image-1").src = "images/cards/cupcake-kitten-1.jpg";
+document.getElementById("image-2").src = "images/cards/cupcat-card-scene-2.jpg";
+}
+	
+function doWhimsical() {
+number_of_images = 1;
+document.getElementById("image-1").src = "images/whimsical/cupcake-kitten-1.jpg";
+}
+	
+function doInstallation() {
+number_of_images = 5;
+document.getElementById("image-1").src = "images/installation/flag-installation-1.jpg";
+document.getElementById("image-2").src = "images/installation/flag-installation-2.jpg";
+document.getElementById("image-3").src = "images/installation/r3c3-flag.jpg";
+document.getElementById("image-4").src = "images/installation/r4c2-flag.jpg";
+document.getElementById("image-5").src = "images/installation/r4c5-flag.jpg";
+}
+	
+</script>
+
+</body>
+</html> 
