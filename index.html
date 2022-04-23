@@ -340,8 +340,11 @@ color: red;
 <script>
 var showType = "auto";
 var slideIndex = 1;
+/*var imgArray = new Array();
+imgArray[0] = new Image();
+imgArray[0].src = 'images/paintings/roswell-burro-head.jpg';*/
 var number_of_images;
-	doPaintings();
+doPaintings();
 /*window.alert("before showSlides in script");*/
 showSlides(slideIndex);
 	
@@ -406,7 +409,6 @@ for (i = 0; i < number_of_images; i++) {
 function doPaintings() {
 number_of_images = 4;
 /*slideIndex = 5;*/
-	
 document.getElementById("image-1").src = "images/paintings/trojan-horse.jpg";
 document.getElementById("image-2").src = "images/paintings/roswell-burro-head.jpg";
 document.getElementById("image-3").src = "images/paintings/plumeria-bernashe.jpg";
