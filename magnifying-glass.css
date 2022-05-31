@@ -1,3 +1,20 @@
 @charset "utf-8";
 /* CSS Document */
 
+* {box-sizing: border-box;}
+
+.img-magnifier-container {
+  position:relative;
+}
+
+.img-magnifier-glass {
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 0%;/* 0% is square, 50% is round*/
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 200px;
+  height: 200px;
+	
+}
+
