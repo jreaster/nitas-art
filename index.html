@@ -348,6 +348,8 @@ var slideIndex = 1;
 imgArray[0] = new Image();
 imgArray[0].src = 'images/paintings/roswell-burro-head.jpg';*/
 var number_of_images;
+	//imgID - to pass image id to magnifier glass
+	var imgID;
 doPaintings();
 /*window.alert("before showSlides in script");*/
 showSlides(slideIndex);
@@ -380,7 +382,7 @@ function showSlides(n) {
   /*if (n > slides.length) {slideIndex = 1}*/    
   if (n < 1) {slideIndex = number_of_images}
   /*if (n < 1) {slideIndex = slides.length}*/
-	  console.log("image-" + slideIndex);
+	
   }
 	/*if(number_of_images slides.length)*/
 	/*let images_to_show =
@@ -471,8 +473,11 @@ document.getElementById("image-5").src = "images/installation/r4c5-flag.jpg";
 }
 
 	
-function magnify(imgID, zoom,runFlag) {
+function magnify(imgID2, zoom,runFlag) {
   var img, glass, w, h, bw;
+	imgID = "image-" + slideIndex ;
+	  console.log(imgID);
+  /*img = document.getElementById(imgID);*/
   img = document.getElementById(imgID);
   /*create magnifier glass:*/
   if(runFlag){
